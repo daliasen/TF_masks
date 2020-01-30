@@ -24,7 +24,7 @@ function masked_TF_array = maskAllMasks(est_sources, mixture_TF, maskParamsArray
 %               sigmoid and combined masks)
 
 for i=1:length(maskParamsArray)
-    masked_TF_array(i).value = mask(est_sources, mixture_TF, maskParamsArray(i));
+    masked_TF_array(i).value = mask(est_sources, mixture_TF, maskParamsArray{i});
     name = maskParamsArray{i}.type;
     if isfield(maskParamsArray{i}, 'p')
         name = [name '-' int2str(maskParamsArray{i}.p)];
