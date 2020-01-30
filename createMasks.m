@@ -1,4 +1,4 @@
-function[masks] = createMasks(est_sources, maskParams)
+function masks = createMasks(est_sources, maskParams)
 
 % Input:
 %   1) est_sources - magnitude spectrograms of the estimated sources, with 
@@ -6,12 +6,12 @@ function[masks] = createMasks(est_sources, maskParams)
 %           M - frequency bins
 %           R - sources i.e. bases
 %           N - mixture length
-%   2) maskParams - mask parameters:
+%   2) maskParams - time-frequency mask parameters:
 %       maskParams.type - mask name (binary-max, binary-sum, ratio, 
 %           combined, sigmoid)
-%       maskParams.p - power for a sigmoid mask
-%       maskParams.zeta - balance between a ratio and a binary masks for 
-%           a combined mask
+%       maskParams.p - power for the sigmoid mask
+%       maskParams.zeta - balance between the ratio and the binary masks for 
+%           the combined mask
 %
 % Output:
 %   1) masks - a tensor containing masks for all sources

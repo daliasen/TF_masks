@@ -1,4 +1,4 @@
-function[ratio_mask] = ratioMask(desired,interferer)
+function ratio_mask = ratioMask(desired,interferer)
 
 % Input:
 %   1) desired - a magnitude spectrogram of the desired signal

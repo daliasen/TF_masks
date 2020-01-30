@@ -1,4 +1,4 @@
-function[ax, h] = maskPlot(mask,w,overlap,fs,plot_title)
+function [ax, h] = maskPlot(mask,w,overlap,fs,plot_title)
 
 % Input:
 %   1) mask - a matrix produced with the ratioMask function

@@ -1,4 +1,4 @@
-function[binary_mask] = binaryMask(desired,interferer)
+function binary_mask = binaryMask(desired,interferer)
 
 % Inputs:
 %   1) desired - a magnitude spectrogram of the desired signal

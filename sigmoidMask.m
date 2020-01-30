@@ -1,4 +1,4 @@
-function[sigmoid_mask] = sigmoidMask(desired,all_sources,p)
+function sigmoid_mask = sigmoidMask(desired,all_sources,p)
 
 % Inputs:
 %   1) desired - a magnitude spectrogram of the desired signal

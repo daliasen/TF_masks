@@ -1,4 +1,4 @@
-function[combined_mask] = combinedMask(desired,interferer,zeta)
+function combined_mask = combinedMask(desired,interferer,zeta)
 
 % A mask described in the following paper:
 %   Dalia Senvaityte, Johan Pauwels, and Mark Sandler. 2019. Guitar
