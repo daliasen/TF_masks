@@ -6,7 +6,7 @@ function[masked_TF] = applyMasks(TF_mixture,masks)
 %
 % Outputs:
 %   1) masked_TF - all sources extracted from the mixture using the
-%       corresponding masks
+%       corresponding masks, the left most dimension should be sources
 
 [R,M,N] = size(masks);
 masked_TF = zeros(R,M,N);
