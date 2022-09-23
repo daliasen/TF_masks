@@ -2,10 +2,10 @@ function[sigmoid_mask] = sigmoidMask(desired,all_sources,p)
 
 % Inputs:
 %   1) desired - a magnitude spectrogram of the desired signal
-%   2) all_sources - a magnitude spectrogram of all signals including the
+%   2) all_sources - magnitude spectrograms of all signals including the
 %       desired, with dimensions RxMxN:
-%           M - frequency bins
-%           R - sources 
+%           R - number of sources 
+%           M - number of frequency bins
 %           N - mixture length
 %   3) p - power
 %
