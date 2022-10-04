@@ -25,7 +25,6 @@ function combined_masks = combinedMasks(all_sources, zeta)
 %           R - sources
 
 [M, N, R] = size(all_sources);
-binary_masks = zeros(M, N, R);
 ratio_masks = zeros(M, N, R);
 all_source_indeces = linspace(1, R, R);
 ratio_more_than_zeta_masks = zeros(M, N, R);
@@ -35,12 +34,13 @@ for r=1:R
     desired = all_sources(:,:,r);
     interferers = all_sources(:,:,interferer_indeces);
     
-    binary_masks(:,:,r) = binaryMaskMax(desired, interferers);
     ratio_masks(:,:,r) = ratioMask(desired, sum(interferers, 3));
     
     ratio_more_than_zeta_masks(:,:,r) = ...
         desired ./ (sum(interferers, 3) + eps) > zeta;
 end
+
+binary_masks = binaryMasksMax(all_sources);
 
 keep_binary = sum(ratio_more_than_zeta_masks, 3);
 keep_ratio = ~keep_binary;
