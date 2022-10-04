@@ -1,16 +1,23 @@
-function[masked_TF] = applyMasks(TF_mixture,masks)
+function masked_TF = applyMasks(TF_mixture, masks)
 
 % Inputs:
 %   1) TF_mixture - a time-frequency representation of the mixture
-%   2) masks - a mask for each source in the mixture
+%   2) masks - a mask for each source in the mixture, with dimensions
+%       MxNxR:
+%           M - number of frequency bins
+%           N - mixture length
+%           R - number of sources 
 %
 % Outputs:
 %   1) masked_TF - all sources extracted from the mixture using the
-%       corresponding masks, the left most dimension should be sources
+%       corresponding masks, with dimensions MxNxR:
+%           M - number of frequency bins
+%           N - mixture length
+%           R - number of sources 
 
-[R,M,N] = size(masks);
-masked_TF = zeros(R,M,N);
-for r=0:R-1
-    mask_r = permute(masks(r+1,:,:), [2 3 1]); 
-    masked_TF(r+1,:,:) = mask_r.*TF_mixture;
+[M, N, R] = size(masks);
+masked_TF = zeros(M, N, R);
+for r=1:R
+    mask_r = masks(:,:,r); 
+    masked_TF(:,:,r) = mask_r.*TF_mixture;
 end

@@ -20,7 +20,6 @@ function sumToMixture3sourcesTest(testCase)
     % R = 3 (number of sources)
     
     all_sources = cat(3, source_1, source_2, source_3); % MxNxR
-    all_sources = permute(all_sources, [3 1 2]); % RxMxN
     
     mixture = source_1 + source_2 + source_3;
     
@@ -81,7 +80,6 @@ function sumToMixture6sourcesTest(testCase)
                       source_4, ...
                       source_5, ...
                       source_6); % MxNxR
-    all_sources = permute(all_sources, [3 1 2]); % RxMxN
     
     mixture = source_1 + ...
               source_2 + ...
@@ -151,7 +149,6 @@ function sumToMixture3sourcesPowerOneTest(testCase)
                        0.8 4/6 0.25];
     
     all_sources = cat(3, source_1, source_2, source_3); % MxNxR
-    all_sources = permute(all_sources, [3 1 2]); % RxMxN
     
     mixture = source_1 + source_2 + source_3;
     
@@ -186,7 +183,6 @@ function sumToMixture2sourcesTest(testCase)
     % R = 2 (number of sources)
     
     all_sources = cat(3, source_1, source_2); % MxNxR
-    all_sources = permute(all_sources, [3 1 2]); % RxMxN
     
     mixture = source_1 + source_2;
     
@@ -231,8 +227,7 @@ function mask2sourcesPowerOneTest(testCase)
     
     mixture = source_1 + source_2;
     
-    all_sources = cat(3, source_1, source_2); % MxNxR    
-    all_sources = permute(all_sources, [3 1 2]); % RxMxN
+    all_sources = cat(3, source_1, source_2); % MxNxR
     
     mask_1 = sigmoidMask(source_1, all_sources, p);
     mask_2 = sigmoidMask(source_2, all_sources, p);
